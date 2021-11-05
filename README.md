@@ -100,7 +100,7 @@ TabNet, XGBoost, CatBoost and AutoGluon have the same two main files as our regu
 
 ## Figures
 
-![alt text](https://github.com/ArlindKadra/RegularizationCocktails/blob/main/figures/all_baselines_diagram.png "Critical Difference diagram of all the methods")
+![alt text](https://github.com/releaunifreiburg/WellTunedSimpleNets/blob/main/figures/all_baselines_diagram.png "Critical Difference diagram of all the methods")
 
 ## Citation
 ```
