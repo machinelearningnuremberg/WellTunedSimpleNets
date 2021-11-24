@@ -104,10 +104,10 @@ TabNet, XGBoost, CatBoost and AutoGluon have the same two main files as our regu
 
 ## Citation
 ```
-@article{kadra2021regularization,
-  title={Regularization is all you Need: Simple Neural Nets can Excel on Tabular Data},
+@inproceedings{kadra2021well,
+  title={Well-tuned Simple Nets Excel on Tabular Datasets},
   author={Kadra, Arlind and Lindauer, Marius and Hutter, Frank and Grabocka, Josif},
-  journal={arXiv preprint arXiv:2106.11189},
+  booktitle={Thirty-Fifth Conference on Neural Information Processing Systems},
   year={2021}
 }
 ```
