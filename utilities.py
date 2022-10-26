@@ -176,7 +176,7 @@ def get_updates_for_regularization_cocktails(
     }
 
     include_updates = dict()
-    include_updates['network_embedding'] = ['NoEmbedding']
+    #include_updates['network_embedding'] = ['NoEmbedding']
     include_updates['network_init'] = ['NoInit']
 
     has_cat_features = any(categorical_indicator)
