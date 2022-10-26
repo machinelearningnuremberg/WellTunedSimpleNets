@@ -176,7 +176,6 @@ def get_updates_for_regularization_cocktails(
     }
 
     include_updates = dict()
-    include_updates['network_embedding'] = ['LinearEntityEmbedding']
     include_updates['network_init'] = ['NoInit']
 
     has_cat_features = any(categorical_indicator)
@@ -303,17 +302,12 @@ def get_updates_for_regularization_cocktails(
 
     if has_cat_features:
         search_space_updates.append(
-            node_name='imputer',
-            hyperparameter='categorical_strategy',
-            value_range=['constant_!missing!'],
-            default_value='constant_!missing!',
-        )
-        search_space_updates.append(
             node_name='encoder',
             hyperparameter='__choice__',
             value_range=['OneHotEncoder'],
             default_value='OneHotEncoder',
         )
+        include_updates['network_embedding'] = ['LearnedEntityEmbedding']
 
     search_space_updates.append(
         node_name='optimizer',
