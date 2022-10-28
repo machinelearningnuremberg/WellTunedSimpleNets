@@ -265,12 +265,14 @@ def get_updates_for_regularization_cocktails(
         value_range=['AdamWOptimizer'],
         default_value='AdamWOptimizer',
     )
+    """
     search_space_updates.append(
         node_name='optimizer',
         hyperparameter='AdamWOptimizer:lr',
         value_range=[1e-3],
         default_value=1e-3,
     )
+    """
     search_space_updates.append(
         node_name='data_loader',
         hyperparameter='batch_size',
