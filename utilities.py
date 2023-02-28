@@ -176,6 +176,7 @@ def get_updates_for_regularization_cocktails(
     }
 
     include_updates = dict()
+    include_updates['network_embedding'] = ['NoEmbedding']
     include_updates['network_init'] = ['NoInit']
 
     has_cat_features = any(categorical_indicator)
@@ -265,14 +266,12 @@ def get_updates_for_regularization_cocktails(
         value_range=['AdamWOptimizer'],
         default_value='AdamWOptimizer',
     )
-    """
     search_space_updates.append(
         node_name='optimizer',
         hyperparameter='AdamWOptimizer:lr',
         value_range=[1e-3],
         default_value=1e-3,
     )
-    """
     search_space_updates.append(
         node_name='data_loader',
         hyperparameter='batch_size',
@@ -304,12 +303,17 @@ def get_updates_for_regularization_cocktails(
 
     if has_cat_features:
         search_space_updates.append(
+            node_name='imputer',
+            hyperparameter='categorical_strategy',
+            value_range=['constant_!missing!'],
+            default_value='constant_!missing!',
+        )
+        search_space_updates.append(
             node_name='encoder',
             hyperparameter='__choice__',
             value_range=['OneHotEncoder'],
             default_value='OneHotEncoder',
         )
-        include_updates['network_embedding'] = ['LearnedEntityEmbedding']
 
     search_space_updates.append(
         node_name='optimizer',
