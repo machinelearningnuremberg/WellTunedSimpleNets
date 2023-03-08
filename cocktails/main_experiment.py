@@ -24,6 +24,8 @@ from autoPyTorch import metrics
 
 import numpy as np
 
+import utilities
+
 from utilities import \
     get_data, \
     get_incumbent_results, \
